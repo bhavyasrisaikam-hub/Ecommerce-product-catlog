@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce Product Catalog</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>My E-Commerce Store</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search Products..."
+    >
+
+    <div class="filters">
+
+        <button onclick="filterCategory('all')">
+            All
+        </button>
+
+        <button onclick="filterCategory(`electronics`)">
+            Electronics
+        </button>
+
+        <button onclick="filterCategory(`jewelery`)">
+            Jewelry
+        </button>
+
+        <button onclick="filterCategory(`men's clothing`)">
+            Men
+        </button>
+
+        <button onclick="filterCategory(`women's clothing`)">
+            Women
+        </button>
+
+    </div>
+
+</header>
+<main>
+
+<div id="products" class="products">
+
+</div>
+
+</main>
+
+<script src="app.js"></script>
