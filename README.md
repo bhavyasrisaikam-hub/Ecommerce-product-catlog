@@ -80,6 +80,22 @@ git clone
 
 ---
 
+## Screenshots
+
+### Home Page
+
+<img width="1600" height="956" alt="WhatsApp Image 2026-06-20 at 14 55 05" src="https://github.com/user-attachments/assets/93085422-9d08-456f-a67d-a4241c5878b7" />
+
+### Product Details Page
+
+<img width="1600" height="946" alt="WhatsApp Image 2026-06-20 at 14 57 00" src="https://github.com/user-attachments/assets/7f67780f-5382-41e9-a45d-c97de62e3f53" />
+
+
+### Cart Page
+
+<img width="1600" height="943" alt="WhatsApp Image 2026-06-20 at 14 57 29" src="https://github.com/user-attachments/assets/3ab91a4c-6d57-4ebb-aba9-b017f2abca1e" />
+
+
 **LiveWebsiteLink**
 
 
