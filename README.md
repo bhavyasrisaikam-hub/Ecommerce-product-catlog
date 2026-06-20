@@ -58,7 +58,7 @@ ecommerce-product-catalog/
 
 1. Clone the repository
 
-git clone 
+git clone https://github.com/bhavyasrisaikam-hub/Ecommerce-product-catlog
 
 2. Open the project folder in Visual Studio Code.
 
