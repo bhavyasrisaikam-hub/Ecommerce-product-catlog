@@ -209,9 +209,27 @@ function useReward(id) {
 
     if (reward) {
 
+        // Save selected reward
         localStorage.setItem(
             "selectedReward",
             JSON.stringify(reward)
+        );
+
+        // Save reward to history
+        let rewardHistory =
+            JSON.parse(localStorage.getItem("rewardHistory")) || [];
+
+        rewardHistory.push({
+            id: reward.id,
+            title: reward.title,
+            savings: reward.savings,
+            usedAt: new Date().toLocaleString(),
+            status: "Used"
+        });
+
+        localStorage.setItem(
+            "rewardHistory",
+            JSON.stringify(rewardHistory)
         );
 
         alert("🎉 " + reward.title + " selected!");
