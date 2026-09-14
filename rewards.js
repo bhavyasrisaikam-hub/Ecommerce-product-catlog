@@ -397,7 +397,7 @@ function displayRewardHistory() {
                 <h3>🎁 ${item.title}</h3>
 
                 <p>
-                    💰 Savings: ₹${item.discount}
+                    💰 Savings: ₹${item.savings}
                 </p>
 
                 <p>
