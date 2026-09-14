@@ -309,3 +309,50 @@ setInterval(
     displayRewards,
     1000
 );
+
+// Check saved reward reminders
+function checkReminders() {
+
+    const reminders =
+        JSON.parse(
+            localStorage.getItem("rewardReminders")
+        ) || [];
+
+    const now = Date.now();
+
+    reminders.forEach(reminder => {
+
+        if (
+            !reminder.notified &&
+            now >= reminder.reminderTime
+        ) {
+
+            const reward = rewards.find(
+                reward => reward.id === reminder.rewardId
+            );
+
+            if (reward) {
+
+                alert(
+                    "🔔 Reward Reminder!\n\n" +
+                    reward.title +
+                    " is expiring soon!"
+                );
+
+                reminder.notified = true;
+            }
+        }
+    });
+
+    localStorage.setItem(
+        "rewardReminders",
+        JSON.stringify(reminders)
+    );
+}
+
+
+// Check reminders every second
+setInterval(
+    checkReminders,
+    1000
+);
