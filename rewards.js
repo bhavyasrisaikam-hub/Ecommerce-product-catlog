@@ -221,6 +221,83 @@ function useReward(id) {
     }
 
 }
+function setReminder(id) {
+
+    const reward = rewards.find(
+        reward => reward.id === id
+    );
+
+    if (!reward) return;
+
+    const choice = prompt(
+        "When should we remind you?\n\n" +
+        "1 = 3 days before\n" +
+        "2 = 1 day before\n" +
+        "3 = 1 hour before"
+    );
+
+    let reminderTime;
+
+    if (choice === "1") {
+
+        reminderTime =
+            reward.expiry -
+            (3 * 24 * 60 * 60 * 1000);
+
+    } else if (choice === "2") {
+
+        reminderTime =
+            reward.expiry -
+            (24 * 60 * 60 * 1000);
+
+    } else if (choice === "3") {
+
+        reminderTime =
+            reward.expiry -
+            (60 * 60 * 1000);
+
+    } else {
+
+        alert("Please select 1, 2, or 3.");
+        return;
+
+    }
+
+    const reminders =
+        JSON.parse(
+            localStorage.getItem("rewardReminders")
+        ) || [];
+
+    const existing =
+        reminders.find(
+            reminder => reminder.rewardId === id
+        );
+
+    if (existing) {
+
+        existing.reminderTime = reminderTime;
+        existing.notified = false;
+
+    } else {
+
+        reminders.push({
+            rewardId: id,
+            reminderTime: reminderTime,
+            notified: false
+        });
+
+    }
+
+    localStorage.setItem(
+        "rewardReminders",
+        JSON.stringify(reminders)
+    );
+
+    alert(
+        "🔔 Reminder set for " +
+        reward.title
+    );
+}
 
 
 // Run immediately
