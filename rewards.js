@@ -371,3 +371,46 @@ setInterval(
     checkReminders,
     1000
 );
+function displayRewardHistory() {
+
+    const container =
+        document.getElementById("rewardHistoryContainer");
+
+    if (!container) return;
+
+    const history =
+        JSON.parse(localStorage.getItem("rewardHistory")) || [];
+
+    if (history.length === 0) {
+        container.innerHTML =
+            "<p>No rewards used yet.</p>";
+        return;
+    }
+
+    container.innerHTML = "";
+
+    history.forEach(item => {
+
+        container.innerHTML += `
+            <div class="history-card">
+
+                <h3>🎁 ${item.title}</h3>
+
+                <p>
+                    💰 Savings: ₹${item.savings}
+                </p>
+
+                <p>
+                    📅 Used on: ${item.usedAt}
+                </p>
+
+                <p>
+                    ✅ Status: ${item.status}
+                </p>
+
+            </div>
+        `;
+    });
+}
+
+displayRewardHistory();
