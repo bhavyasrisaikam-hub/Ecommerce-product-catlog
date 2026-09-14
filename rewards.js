@@ -216,16 +216,23 @@ function useReward(id) {
         );
 
         // Save reward to history
-        let rewardHistory =
-            JSON.parse(localStorage.getItem("rewardHistory")) || [];
+let rewardHistory =
+    JSON.parse(localStorage.getItem("rewardHistory")) || [];
 
-        rewardHistory.push({
-            id: reward.id,
-            title: reward.title,
-            savings: reward.discount || 0,
-            usedAt: new Date().toLocaleString(),
-            status: "Used"
-        });
+// Check if this reward was already used
+const alreadyUsed = rewardHistory.some(
+    item => item.id === reward.id
+);
+
+if (!alreadyUsed) {
+    rewardHistory.push({
+        id: reward.id,
+        title: reward.title,
+        savings: reward.discount || 0,
+        usedAt: new Date().toLocaleString(),
+        status: "Used"
+    });
+}
 
         localStorage.setItem(
             "rewardHistory",
