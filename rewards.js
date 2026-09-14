@@ -162,12 +162,16 @@ function displayRewards() {
 
                     </h3>
 
-                    <button
-                        onclick="useReward(${reward.id})">
+                    <div clas"reward-actions">
+                    166  <button onclick="useReward(${reward.id})">
+      🛒 Use Reward
+  </button>
 
-                        🛒 Use Reward
-
-                    </button>
+  <button onclick="setReminder(${reward.id})">
+      🔔 Remind Me
+  </button>
+                    
+</div>
 
                 </div>
 
