@@ -253,8 +253,7 @@ function setReminder(id) {
     } else if (choice === "3") {
 
         reminderTime =
-            reward.expiry -
-            (60 * 60 * 1000);
+            date.now() + (10 * 1000);
 
     } else {
 
