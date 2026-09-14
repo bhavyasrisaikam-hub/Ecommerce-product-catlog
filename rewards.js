@@ -163,7 +163,7 @@ function displayRewards() {
                     </h3>
 
                     <div clas"reward-actions">
-                    166  <button onclick="useReward(${reward.id})">
+                       <button onclick="useReward(${reward.id})">
       🛒 Use Reward
   </button>
 
