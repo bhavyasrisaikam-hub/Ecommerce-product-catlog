@@ -222,7 +222,7 @@ function useReward(id) {
         rewardHistory.push({
             id: reward.id,
             title: reward.title,
-            savings: reward.discount,
+            savings: reward.discount || 0,
             usedAt: new Date().toLocaleString(),
             status: "Used"
         });
