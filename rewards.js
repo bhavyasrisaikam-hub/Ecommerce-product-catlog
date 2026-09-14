@@ -201,25 +201,23 @@ function displayRewards() {
 }
 
 
-// Use reward
 function useReward(id) {
 
-    const reward =
-        rewards.find(
-            reward => reward.id === id
-        );
-
+    const reward = rewards.find(
+        reward => reward.id === id
+    );
 
     if (reward) {
 
-        alert(
-            "🎉 " +
-            reward.title +
-            " selected!"
+        localStorage.setItem(
+            "selectedReward",
+            JSON.stringify(reward)
         );
 
-    }
+        alert("🎉 " + reward.title + " selected!");
 
+        window.location.href = "cart.html";
+    }
 }
 function setReminder(id) {
 
