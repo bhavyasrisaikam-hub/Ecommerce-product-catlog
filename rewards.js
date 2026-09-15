@@ -289,7 +289,7 @@ function setReminder(id) {
     } else if (choice === "3") {
 
         reminderTime =
-            date.now() + (10 * 1000);
+            Date.now() + (10 * 1000);
 
     } else {
 
