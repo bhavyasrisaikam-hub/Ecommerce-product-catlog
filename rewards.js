@@ -110,7 +110,6 @@ const alreadyUsed = rewardHistory.some(
         }
 
 
-        savings += reward.discount;
 
 
         // Calculate countdown
@@ -188,7 +187,13 @@ const alreadyUsed = rewardHistory.some(
         `;
 
     });
+    // Calculate total savings from used rewards only
+const rewardHistory = JSON.parse(localStorage.getItem("rewardHistory")) || [];
 
+savings = rewardHistory.reduce(
+    (total, item) => total + (Number(item.savings) || 0),
+    0
+);
 
     // Update dashboard
     document.getElementById(
