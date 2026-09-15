@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gift Cards - My E-Commerce Store</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        /* Header */
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Summary cards */
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 35px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .summary-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .summary-card p {
+            font-size: 28px;
+            font-weight: bold;
+            color: green;
+        }
+
+        /* Main heading */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 20px 0 30px;
+        }
+
+        /* Gift card container */
+        .gift-card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 0 30px 40px;
+        }
+
+        /* Gift card */
+        .gift-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .gift-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .gift-card h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .gift-card p {
+            font-size: 17px;
+            margin: 8px 0;
+            color: #444;
+        }
+
+        .balance {
+            font-size: 24px !important;
+            font-weight: bold;
+            color: green !important;
+        }
+
+        .expiry {
+            color: #e65100 !important;
+            font-weight: bold;
+        }
+
+        /* Buttons */
+        button {
+            background: #222;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 8px 4px 0;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        .use-btn {
+            background: #008000;
+        }
+
+        .use-btn:hover {
+            background: #006400;
+        }
+
+        /* History */
+        .history {
+            background: white;
+            margin: 10px 30px 40px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .history h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        #giftCardHistory {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .empty-history {
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .summary {
+                grid-template-columns: 1fr;
+            }
+
+            .gift-card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🎁 My Gift Cards</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+            <a href="rewards.html">My Rewards</a>
+            <a href="giftcards.html">Gift Cards</a>
+        </nav>
+    </header>
+
+    <!-- Summary -->
+    <section class="summary">
+
+        <div class="summary-card">
+            <h2>Available Gift Cards</h2>
+            <p id="activeGiftCards">0</p>
+        </div>
+
+        <div class="summary-card">
+            <h2>Expiring Soon</h2>
+            <p id="expiringGiftCards">0</p>
+        </div>
+
+        <div class="summary-card">
+            <h2>Total Gift Card Balance</h2>
+            <p id="totalGiftBalance">₹0</p>
+        </div>
+
+    </section>
+
+    <!-- Gift Cards -->
+    <h2 class="section-title">🎁 Your Gift Cards</h2>
+
+    <section class="gift-card-container" id="giftCardContainer">
+
+        <!-- Gift cards will be generated by giftcards.js -->
+
+    </section>
+
+    <!-- Gift Card History -->
+    <section class="history">
+
+        <h2>📜 Gift Card History</h2>
+
+        <div id="giftCardHistory">
+            <p class="empty-history">
+                No gift cards have been used yet.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- JavaScript -->
+    <script src="giftcards.js"></script>
+
+</body>
+</html>
