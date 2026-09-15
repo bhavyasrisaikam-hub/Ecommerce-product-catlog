@@ -56,6 +56,12 @@ function displayRewards() {
 
 
     rewards.forEach(reward => {
+        const rewardHistory =
+    JSON.parse(localStorage.getItem("rewardHistory")) || [];
+
+const alreadyUsed = rewardHistory.some(
+    item => item.id === reward.id
+);
 
         const remaining =
             reward.expiry - Date.now();
@@ -162,10 +168,12 @@ function displayRewards() {
 
                     </h3>
 
-                    <div clas"reward-actions">
-                       <button onclick="useReward(${reward.id})">
-      🛒 Use Reward
-  </button>
+                    ${
+    (JSON.parse(localStorage.getItem("rewardHistory")) || [])
+        .some(item => item.id === reward.id)
+        ? `<button disabled>✅ Reward Used</button>`
+        : `<button onclick="useReward(${reward.id})">🛒 Use Reward</button>`
+}
 
   <button onclick="setReminder(${reward.id})">
       🔔 Remind Me
